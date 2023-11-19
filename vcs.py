@@ -4,10 +4,10 @@ import datetime
 import json
 import sys
 
-class SimpleVCS:
+class clobVCS:
     def __init__(self, project_path):
         self.project_path = project_path
-        self.vcs_path = os.path.join(project_path, ".simplevcs")
+        self.vcs_path = os.path.join(project_path, ".clob")
         self.history_file = os.path.join(self.vcs_path, ".history.json")
 
         # Initialize VCS directory and history file
@@ -61,7 +61,7 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         command = sys.argv[1].lower()
         project_path = os.getcwd()
-        vcs = SimpleVCS(project_path)
+        vcs = clobVCS(project_path)
 
         if command == "initialize":
             print("Initializing SimpleVCS...")
